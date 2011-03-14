@@ -4,9 +4,11 @@ namespace nothinbutdotnetprep.utility.filtering
 {
     public static class Where<ItemToFilter>
     {
-        public static object has_a<ReturnType>(PropertyAccessor<ItemToFilter, ReturnType> property_accessor)
+        public static CriteriaFactory<ItemToFilter, ReturnType> has_a<ReturnType>(PropertyAccessor<ItemToFilter, ReturnType> property_accessor)
         {
-            throw new NotImplementedException();
+            return new CriteriaFactory<ItemToFilter, ReturnType>(property_accessor);
+
+          
         }
     }
 }

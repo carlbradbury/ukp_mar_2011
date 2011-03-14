@@ -223,6 +223,9 @@ namespace nothinbutdotnetprep.specs
                 var results = sut.all_movies().all_items_matching(Movie.is_published_by(ProductionStudio.Pixar).or(
                     Movie.is_published_by(ProductionStudio.Disney)));
 
+                var criteria = Where<Movie>.has_a(x => x.production_studio).equal_to(ProductionStudio.Pixar);
+
+
 
                 results.ShouldContainOnly(a_bugs_life, pirates_of_the_carribean, cars);
             };
